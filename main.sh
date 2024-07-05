@@ -4,6 +4,13 @@ partie=1
 while [ "$partie" -eq 1 ]
 do
 	nom=$(saisir_nom)
-	Choisir_la_difficulte
-	./boucle.sh $(cat "nb_voltorbe")
+	if [ "$nom" = "bonnet" ]
+     	then 
+        	echo 'vous avez gagné, votre score est de 1000000000'
+		partie=0
+	
+	else
+		Choisir_la_difficulte
+		partie=$(./boucle.sh $(cat "nb_voltorbe"))
+	fi
 done 
