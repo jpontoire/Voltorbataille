@@ -17,3 +17,10 @@ done
 }
 
 Chosir_la_difficulte
+
+#Fonction pour assigner un nom
+saisir_nom() {
+read -p "Entrez votre nom: " nom
+echo $nom
+}
+nom=$(saisir_nom)
