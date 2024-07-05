@@ -10,7 +10,7 @@ function init-tab {
 			val=$(($((RANDOM%3))+1))
 			#echo "$val"
 			touch "coordo/$lettre$i.sh"
-			echo "$val" > "coordo/$lettre$i.sh"
+			echo "-$val" > "coordo/$lettre$i.sh"
 		done
 	done
 }
