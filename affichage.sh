@@ -1,12 +1,12 @@
 #!/bin/bash
 
 function affichage_ligne(
-        echo -n "+"
+        echo -n -e "\E[31m+\E[0m"
         for i in $(seq 1 $(("$1"-1)))
         do
-                echo -n "---+"
+                echo -n -e "\E[31m---+\E[0m"
         done
-        echo "---+"
+        echo -e "\E[31m---+\E[0m"
 )
 
 function chercher_case(
@@ -14,9 +14,9 @@ function chercher_case(
         case=$(cat "coordo/$lettre$1.sh")
 	if [ "$case" -le 0 ]
 	then
-		echo "*"
+		echo -e "\E[32m*\E[0m"
         else
-		echo "$case"
+		echo -e "\E[34m$case\E[0m"
 	fi
 )
 
@@ -35,7 +35,7 @@ function info_ligne(
 			somme=$(("$somme" + "$case"))
 		fi
 	done
-	echo "Somme: $somme/Voltorbe: $voltorbe"			
+	echo -e "\E[32mSomme: $somme\E[0m/\E[31mVoltorbe: $voltorbe\E[0m/"
 )
 
 function info_colonne_somme(
@@ -46,7 +46,7 @@ function info_colonne_somme(
                 case="${case#-}"
                 somme=$(("$somme"+"$case"))
         done
-	echo -n "S:$somme|"
+	echo -n -e "\E[32mS:$somme|\E[0m"
 )
 
 function info_colonne_voltorbe(
@@ -59,18 +59,18 @@ function info_colonne_voltorbe(
                 	voltorbe=$(("$voltorbe"+1))
 		fi
         done
-        echo -n "V:$voltorbe|"
+        echo -n -e "\E[31mV:$voltorbe|\E[0m"
 )
 
 function affichage(
         affichage_ligne "$1"
         for  i in $(seq 1 "$1") 
         do 
-                echo -n "|"
+                echo -n -e "\E[31m|\E[0m"
                 for j in $(seq 1 "$1")
                 do
                         case=$(chercher_case "$i" "$j")
-                        echo -n " $case |"
+                        echo -n -e " $case \E[31m|\E[0m"
              	done
 		info_ligne "$i" "$1"
                 affichage_ligne "$1"
