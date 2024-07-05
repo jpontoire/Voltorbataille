@@ -12,7 +12,12 @@ function affichage_ligne(
 function chercher_case(
         lettre=$(printf "\\$(printf '%03o' "$(($2+64))")")
         case=$(cat "coordo/$lettre$1.sh")
-        echo "$case"
+	if [ "$case" -le 0 ]
+	then
+		echo "*"
+        else
+		echo "$case"
+	fi
 )
 
 function affichage(
