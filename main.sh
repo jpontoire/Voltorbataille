@@ -11,6 +11,6 @@ do
 	
 	else
 		Choisir_la_difficulte
-		partie=$(./boucle.sh $(cat "nb_voltorbe"))
+		./boucle.sh $(cat "nb_voltorbe")
 	fi
 done 
