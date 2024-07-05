@@ -5,6 +5,7 @@ source ./init-tab.sh
 source ./maj_etat_de_jeu.sh
 source ./actualise_score.sh
 source ./affichageScoreActuel.sh
+source ./etatfinal.sh
 
 function boucle {
 	init-tab
@@ -30,6 +31,13 @@ function boucle {
 				score=$(actualiser_score $score $statut)
 				affichage 5
 				affichage_score $score
+			fi
+			fin=$(verif)
+			echo $fin
+			if [ $fin -eq 1 ]
+			then
+				echo "Vous avez gagné"
+				flag="false"
 			fi
 		fi
 	done
