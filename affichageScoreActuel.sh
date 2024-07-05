@@ -1,4 +1,9 @@
+#/bin/bash
 
-score_actuel=0
+function affichage_score {
+	echo "Score : $1"
+}
 
-echo "Vous avez $score_actuel" 
+#score_actuel=0
+
+#echo "Vous avez $score_actuel" 
