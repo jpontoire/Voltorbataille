@@ -35,5 +35,5 @@ function add_voltorbes {
 
 
 
-init-tab
-add_voltorbes $1
+#init-tab
+#add_voltorbes $1
