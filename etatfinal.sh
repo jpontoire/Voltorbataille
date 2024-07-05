@@ -9,7 +9,7 @@ function verif {
 	for fichier in $(ls ./coordo/*)
 	do
 		val=$(cat $fichier)
-		if [ $val -eq -2 ] || [ $val -eq -3 ]
+		if [ $val = '-2' ] || [ $val = '-3' ]
 		then
 			test=0
 		fi
