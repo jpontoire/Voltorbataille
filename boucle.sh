@@ -33,7 +33,7 @@ function boucle {
 				affichage_score $score
 			fi
 			fin=$(verif)
-			echo $fin
+			#echo $fin
 			if [ $fin -eq 1 ]
 			then
 				echo "Vous avez gagné"
