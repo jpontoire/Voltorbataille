@@ -11,6 +11,7 @@ function maj-etat {
 		echo "0"
 	else
 		echo $((-$val)) > $case
+		echo "1"
 	fi
 }
 
